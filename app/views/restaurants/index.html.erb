@@ -1,2 +1,22 @@
-<h1>Restaurants#index</h1>
-<p>Find me in app/views/restaurants/index.html.erb</p>
+<h1>All Restaurants</h1>
+<h2><%= link_to 'New Restaurant', restaurants_new_path %></h2>
+<% rand = 0 %>
+<div class="container">
+  <% @restaurants.each do |restaurant| %>
+    <%= link_to(restaurant_path(restaurant)) do %>
+      <div class="card-trip">
+        <img src="https://source.unsplash.com/collection/312299/restaurant-cafe?#{rand}">
+        <div class="card-trip-infos">
+          <div>
+            <h2><%= restaurant.name %></h2>
+            <p><strong><%= restaurant.category.capitalize %>:</strong> <%= restaurant.address %></p>
+          </div>
+          <h2 class="card-trip-pricing"><%= restaurant.phone_number %></h2>
+        </div>
+      </div>
+    <% end %>
+    <% rand += 1 %>
+  <% end %>
+</div>
+
+
