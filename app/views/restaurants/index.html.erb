@@ -1,5 +1,11 @@
-<h1>All Restaurants</h1>
-<h2><%= link_to 'New Restaurant', restaurants_new_path %></h2>
+<div class="card-category full-height" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <h1>All Restaurants</h1>
+  <div class="btn btn-ghost" href="#">
+    <%= link_to 'New Restaurant', restaurants_new_path %>
+  </div>
+</div>
+
+
 <% rand = 0 %>
 <div class="container">
   <% @restaurants.each do |restaurant| %>
@@ -11,7 +17,11 @@
             <h2><%= restaurant.name %></h2>
             <p><strong><%= restaurant.category.capitalize %>:</strong> <%= restaurant.address %></p>
           </div>
-          <h2 class="card-trip-pricing"><%= restaurant.phone_number %></h2>
+          <h2 class="card-trip-pricing">
+            <%= restaurant.phone_number[0..12] %>
+
+            </h2>
+          <p>
         </div>
       </div>
     <% end %>

@@ -1,11 +1,21 @@
-<div class="card-category" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+<div class="card-category full-height" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
   <div><%= @restaurant.name %></div>
 </div>
-<div>
-  <p><%= @restaurant.category %></p>
-  <p><%= @restaurant.address %></p>
-  <p><%= @restaurant.phone_number %></p>
-</div>
-<div>
-  <%= link_to "Add new review", new_restaurant_review_path(@restaurant) %>
+  <div class="container">
+    <div class="center-card">
+      <div>
+        <h2><%= @restaurant.category.capitalize %></h2>
+      </div>
+      <div>
+        <p><%= @restaurant.address %></p>
+      </div>
+      <div>
+        <p><%= @restaurant.phone_number[0..12] %></p>
+      </div>
+    </div>
+  </div>
+<div class="container">
+  <div class="btn-ghost">
+    <%= link_to "Add new review", new_restaurant_review_path(@restaurant) %>
+  </div>
 </div>

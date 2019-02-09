@@ -1,7 +1,21 @@
-<h1>Creating new review for: <%= @restaurant.name %></h1>
+<div class="card-category full-height" style="background-image: linear-gradient(rgba(0,0,0,0.3), rgba(0,0,0,0.3)), url(https://raw.githubusercontent.com/lewagon/fullstack-images/master/uikit/breakfast.jpg)">
+  <div>Review for <%= @restaurant.name %></div>
+</div>
+<div class="container">
+  <div class="form-container">
+    <%= simple_form_for [@restaurant, @review] do |f| %>
+     <!-- <div class="container"> -->
+        <%= f.input :content, class: "form-control"%>
+          <%= f.collection_radio_buttons :rating, [[5], [4], [3], [2], [1]], :first, :last do |b| %>
+          <%= b.radio_button + b.label {''} %>
+          <% end %>
+      <!-- </div> -->
+      <div class="form-actions">
+        <%= f.submit class: "btn-ghost" %>
+      </div>
+    <% end %>
+  </div>
+</div>
 
-<%= simple_form_for [@restaurant, @review] do |f| %>
-  <%= f.input :content%>
-  <%= f.input :rating %>
-  <%= f.submit %>
-<% end %>
+<!-- , :first, :last, item_wrapper_tag: false, boolean_style: :inline -->
+

@@ -14,6 +14,7 @@
 @import "components/index";
 @import "pages/index";
 
+
 h1 {
   text-align: center;
 }
@@ -89,4 +90,46 @@ h1 {
   box-shadow: 0 0 15px rgba(0,0,0,0.2);
 }
 
+.card-category .full-height {
+  height: 100vh;
+  background-color: red;
+}
 
+// Button
+
+.btn-ghost {
+  margin: 10px;
+  width: 200px;
+  color: #4A4A4A;
+  border: 1px solid #4A4A4A;
+  padding: 8px 24px;
+  border-radius: 50px;
+  font-weight: lighter;
+  opacity: 0.6;
+  transition: opacity 0.3s ease;
+  text-align: center;
+}
+.btn-ghost:hover {
+  opacity: 1;
+}
+
+.form-container {
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  width: 400px;
+}
+
+.center-card {
+  margin: 20px;
+  padding: 30px;
+  border-radius: 3px;
+  border: 1px solid rgb(200,200,200);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+  text-align: center;
+}
+
+.card-category .btn-ghost {
+  background-color: white;
+  opacity: 1;
+}

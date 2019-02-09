@@ -68,6 +68,7 @@ gem 'faker', :git => 'https://github.com/stympy/faker.git', :branch => 'master'
 
 # Front end stuff
 
+gem "bootstrap_form", ">= 4.1.0"
 gem 'bootstrap-sass'
 gem 'font-awesome-sass', '~> 5.0.9'
 gem 'simple_form'
